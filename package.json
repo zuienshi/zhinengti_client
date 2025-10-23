@@ -1,0 +1,60 @@
+{
+  "name": "electron-vue2-app",
+  "version": "1.0.0",
+  "description": "Electron + Vue2 + Element UI 智能体应用",
+  "main": "main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "electron:dev": "set NODE_ENV=development && electron .",
+    "electron:build": "vite build && electron-builder",
+    "package": "vite build && electron-packager . \u667a\u80fd\u4f53\u5e94\u7528 --platform=win32 --arch=x64 --out=build --overwrite --ignore=node_modules --ignore=src --ignore=.git"
+  },
+  "keywords": [
+    "electron",
+    "vue2",
+    "element-ui",
+    "智能体"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.12.2",
+    "element-ui": "^2.15.13",
+    "vue": "^2.7.16",
+    "vue-router": "^3.6.5",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "^2.3.1",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.3",
+    "electron-is-dev": "^3.0.1",
+    "electron-packager": "^17.1.2",
+    "vite": "^5.2.11"
+  },
+  "build": {
+    "appId": "com.electronvue2.app",
+    "productName": "智能体应用",
+    "electronVersion": "29.4.6",
+    "directories": {
+      "output": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js",
+      "package.json"
+    ],
+    "extraMetadata": {
+      "main": "main.js"
+    },
+    "win": {
+      "sign": false,
+      "verifyUpdateCodeSignature": false,
+      "target": [
+        "dir"
+      ]
+    }
+  }
+}
